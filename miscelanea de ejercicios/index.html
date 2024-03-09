@@ -1,68 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>miscelanea de ejercicios</title>
-  <h1>Miscelanea De Ejercicios</h1>
-
-  <style>
-    /*estilos pagina*/
-    h1{
-      text-align: center;
-    }
-
-
-
-
-
-    /* Estilo para el menú desplegable */
-    #menu {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #333;
-    }
-
-    #menu > li {
-      float: left;
-      position: relative; /* Esto permite posicionar el contenido desplegable relativo a estos ítems */
-    }
-
-    #menu li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    #menu li a:hover {
-      background-color: #111;
-    }
-
-
-  </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Page</title>
 </head>
-
-
 <body>
-  <nav>
-    <ul id="menu">
-      <li>
-        <a href="../miscelanea de ejercicios/operadores.html">Operadores</a>
-      </li>
+<header>
+    
+    <h1>Miscelanea De Ejercicios</h1>
 
-      <li>
-        <a href="#" >Condicionales</a>
-  
-      </li>
+</header>
 
-      <li><a href="#">Ciclos</a></li>
-    </ul>
-  </nav>
-  
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown" onmouseover="showDropdown(this)" onmouseleave="hideDropdown(this)">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Operadores
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+
+
+
+                <li>
+                    <button class="dropdown-item" id="openModal">Área Triángulo</button>
+                    <div id="miModal" class="modal">
+                        <div class="modal-contenido">
+                            <span class="cerrar">&times;</span>
+                            <h2>Ingresa los valores</h2>
+                            <label for="base">Base:</label>
+                            <input type="number" id="base" required>
+                            <br>
+                            <label for="altura">Altura:</label>
+                            <input type="number" id="altura" required>
+                            <br>
+                            <button class="btn btn-primary" onclick="calcularArea()">Calcular Área</button>
+                            <div id="resultado">
+                                <h2>Área: <span id="area"></span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+
+
+
+
+                <li>
+                    <button class="dropdown-item" id="openModalSuma">Sumar Números</button>
+                    <div id="modalSuma" class="modal">
+                        <div class="modal-contenido">
+                            <span class="cerrar">&times;</span>
+                            <h2>Ingresa los números</h2>
+                            <label for="num1">Número 1:</label>
+                            <input type="number" id="num1" required>
+                            <br>
+                            <label for="num2">Número 2:</label>
+                            <input type="number" id="num2" required>
+                            <br>
+                            <button class="btn btn-primary" onclick="sumarNumeros()">Sumar</button>
+                            <div id="resultadoSuma">
+                                <h2>Resultado: <span id="resultadoSumaTexto"></span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+
+
+
+
+                <div>
+                    <li>
+                    <button class="dropdown-item" id="openModalElevado">Numero elevado al cuadrado</button>
+                    <div id="modalElevado" class="modal">
+                        <div class="modal-contenido">
+                            <span class="cerrar">&times;</span>
+                            <h2>Ingresa numero y sera elevado al cuadrado </h2>
+                            <label for="ingresaNum">Ingresa numero</label>
+                            <input type="number" id="ingresaNum" required>
+                            <br>
+                            <button class="btn btn-primary" onclick="elevarAlCuadrado()">Elevar</button>
+                            <div id="resultadoNumero">
+                                <h2>Resultado: <span id="resultadoNum"></span></h2>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </li> 
+
+
+
+
+
+
+                <li>
+                    <button class="dropdown-item" id="openModalConversion">Conversion euros a dolares</button>
+                    <div id="modalConversion" class="modal">
+                        <div class="modal-contenido">
+                            <span class="cerrar">&times;</span>
+                            <h2>Ingresa cantidad de euros</h2>
+                            <label for="ingresaTotalEuros">Ingresa total euros</label>
+                            <input type="number" id="ingresaTotalEuros" required>
+                            <br>
+                            <button class=" btn btn-primary" onclick="eurosADolares()">Conversion</button>
+                            <div id="resultadoConversion">
+                                <h2>Resultado: <span id="resultadoConversion"></span></h2>
+                            </div>
+                        </div>
+                    </div>                
+                    </li>
+
+
+
+
+                    <li>
+                        <button class="dropdown-item" id="openModalCilindro">Área y volumen de un cilindro</button>
+                        <div id="modalCilindro" class="modal">
+                           <div class="modal-contenido">
+                               <span class="cerrar">&times;</span>
+                               <h2>Ingresa valores correspondientes</h2>
+                               <label for="valor1">Radio:</label>
+                               <input type="number" id="valor1" required>
+                               <br>
+                               <label for="valor2">Altura:</label>
+                               <input type="number" id="valor2" required>
+                               <br>
+                               <button class="btn btn-primary" onclick="calcularAreaYVolumenCilindro()">Valores cilindro</button>
+                               <div id="resultadoCilindro">
+                                   <h2>Resultado: <span id="textoResultado"></span></h2>
+                               </div>
+                           </div>
+                       </div>
+                        </li>
+
+
+
+
+                        <li>
+                            <button class="dropdown-item" id="openModalCuadrado">Área y perímetro de cuadrado</button>
+                            <div id="modalCuadrado" class="modal">
+                                <div class="modal-contenido">
+                                    <span class="cerrar">&times;</span>
+                                    <h2>Ingresa valor de un lado del cuadrado</h2>
+                                    <label for="ladoCuadrado">lado del cuadrado</label>
+                                    <input type="number" id="ladoCuadrado" required>
+                                    <br>
+                                    <button class="btn btn-primary" onclick="calcularAreaYPerimetroCuadrado()">Calcular área y perímetro del cuadrado</button>
+                                    <div id="resultadoCuadrado">
+                                        <h2>Resultado: <span id="resultadoCuadradoTexto"></span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> 
+
+
+
+
+
+                        <li>
+                            <button class="dropdown-item" id="openModalCircunferencia">Área y longitud de circunferencia</button>
+                            <div id="modalCircunferencia" class="modal">
+                                <div class="modal-contenido">
+                                    <span class="cerrar">&times;</span>
+                                    <h2>Ingresa radio de la circunferencia</h2>
+                                    <label for="radioCircunferencia">Radio circunferencia</label>
+                                    <input type="number" id="radioCircunferencia" required>
+                                    <br>
+                                    <button class="btn btn-primary" onclick="calcularLongitudYAreaCircunferencia()">Calcular área y longitud de circunferencia</button>
+                                    <div id="resultadoCircunferencia">
+                                        <h2>Resultado: <span id="resultadoCircunferenciaTexto"></span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+
+                        <li>
+                            <button class="dropdown-item" id="openModalPromedio">Promedio de numeros</button>
+                            <div id="modalPromedio" class="modal">
+                                <div class="modal-contenido">
+                                   <span class="cerrar">&times;</span>
+                                   <h2>Ingresa tres numeros</h2>
+                                   <label for="primerNumero">Primer numero</label>
+                                   <input type="number" id="primerNumero" required>
+                                   <label for="segundonumero">Segundo numero</label>
+                                   <input type="number" id="segundoNumero" required>
+                                   <label for="tercerNumero">Tercer numero</label>
+                                   <input type="number" id="tercerNumero" required>
+                                   <br>
+                                   <button class="btn btn-primary" onclick="calcularPromedio()">Calcular promedio de numeros</button>
+                                   <div id="resultadoPromedio">
+                                       <h2>Resultado: <span id="resultadoPromedioTexto"></span></h2>
+                                   </div>
+                                </div>
+                            </div>       
+                        </li>
+                    </ul>
+                </li>
+
+
+
+            </ul>
+        </li>
+
+
+
+        
+
+
+
+               
+            </ul>
+        </li>
+
+
+
+
+
+    
+<script src="script.js"></script>
+
+
+
+<script>
+    function showDropdown(element) {
+        let dropdownMenu = element.getElementsByClassName('dropdown-menu')[0];
+        dropdownMenu.classList.add('show');
+    }
+    
+    function hideDropdown(element) {
+        let dropdownMenu = element.getElementsByClassName('dropdown-menu')[0];
+        dropdownMenu.classList.remove('show');
+    }
+</script>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

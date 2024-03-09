@@ -1,0 +1,102 @@
+
+
+
+/* Estilos generales para el navbar */
+.navbar {
+    background-color: #f0f5f1; /* Un verde muy claro como fondo */
+    border-bottom: 2px solid #004d40; /* Un verde más oscuro para el borde */
+    padding: 10px 20px;
+}
+
+/* Estilo de los enlaces del navbar */
+.navbar .nav-link {
+    color: #00796b; /* Un verde medio */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Cambio de color al pasar el mouse */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #004d40; /* Un verde más oscuro */
+}
+
+/* Estilo de los dropdown menus */
+.dropdown-menu {
+    background-color: #e8f5e9; /* Un verde muy claro */
+    border: 1px solid #004d40; /* Borde verde oscuro */
+}
+
+/* Estilo de los items del dropdown */
+.dropdown-item {
+    color: #00796b; /* Un verde medio */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Cambio de color al pasar el mouse sobre los items */
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #004d40; /* Un verde oscuro para el fondo */
+    color: #ffffff; /* Texto en blanco */
+}
+
+/* Estilos generales para los botones */
+.btn-primary {
+    background-color: #00796b; /* Un verde medio para el fondo */
+    border: none;
+    color: #ffffff; /* Texto en blanco */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Cambio de color al pasar el mouse sobre los botones */
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #004d40; /* Un verde oscuro para el fondo */
+}
+
+/* Estilos para los modales */
+.modal {
+    display: none; /* Mantiene el modal oculto hasta que se activa */
+    position: fixed; /* Fijo en la pantalla, no se mueve al hacer scroll */
+    z-index: 1050; /* Asegura que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto */
+    overflow: auto; /* Permite hacer scroll dentro del modal si el contenido es muy largo */
+    background-color: rgba(0,0,0,0.4); /* Fondo semitransparente para dar efecto de oscuridad */
+}
+
+/* Para centrar el contenido del modal y hacerlo más compacto */
+.modal-content {
+    background-color: #e8f5e9; /* Fondo claro con tono verde */
+    margin: 15% auto; /* Centra el modal verticalmente y horizontalmente */
+    padding: 20px;
+    border: 1px solid #88a097; /* Borde sutil */
+    width: 80%; /* Ancho relativo al contenedor padre, ajustable según necesidad */
+    max-width: 500px; /* Máximo ancho que puede tener */
+    border-radius: 5px; /* Bordes redondeados para un look más suave */
+}
+
+.modal-contenido {
+    background-color: #e8f5e9; /* Un fondo verde claro */
+    border-radius: 5px; /* Bordes redondeados */
+    /* Más de tus estilos personalizados */
+}
+
+/* Estilo para cerrar el modal */
+.cerrar {
+    color: #004d40; /* Un verde oscuro */
+    cursor: pointer;
+    /* Más estilos según sea necesario */
+}
+
+/* Centrar texto de los h2 dentro de los modales */
+.modal-contenido h2 {
+    text-align: center;
+    color: #00796b; /* Un verde medio */
+}
+
+
+h1 {
+    text-align: center;
+}
