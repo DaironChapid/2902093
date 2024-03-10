@@ -12,7 +12,6 @@ function calcularArea() {
     var base = document.getElementById('base').value;
     var altura = document.getElementById('altura').value;
     var area = (base * altura) / 2;
-    var area =(base*altura) / 2;
     
 document.getElementById('area').textContent = area + ' unidades cuadradas';
   }
@@ -175,29 +174,79 @@ function calcularPromedio() {
 
 
 
+//CONDICIONALES//
 
-//CONDICIONALES
-  //NUMERO POSITIVO O NEGATIVO
-  document.getElementById('openModalVerificacion').addEventListener('click', function() {
-    document.getElementById('modalVerificacion').style.display = 'block';
-  });
-  
-  var cerrarButtons = document.getElementsByClassName('cerrar');
-  for (let i = 0; i < cerrarButtons.length; i++) {
-    cerrarButtons[i].addEventListener('click', function() {
-        this.parentElement.parentElement.style.display = 'none';
-    });
-  }
-  function verificarPositivoNegativo() {
-    var num = parseFloat(prompt("Ingrese un número: "));
-    if (num > 0) {
-      alert("El número es positivo");
-    } else if (num < 0) {
-      alert("El número es negativo");
-    } else {
-      alert("El número es cero");
+
+//VERIFICAR POSITIVO Y NEGATIVO//
+
+
+    
+    function verificarPositivoNegativo() {
+        var num = parseFloat(document.getElementById('numero').value);
+        var resultadoTexto = document.getElementById('resultadoVerificacionTexto');
+    
+        if (isNaN(num)) {
+            resultadoTexto.innerText = "Por favor ingrese un número válido.";
+        } else {
+            if (num > 0) {
+                resultadoTexto.innerText = "El número es positivo.";
+            } else if (num < 0) {
+                resultadoTexto.innerText = "El número es negativo.";
+            } else {
+                resultadoTexto.innerText = "El número es cero.";
+            }
+        }
     }
+
+
+
+//Algoritmo que diga cual es mayor o menor
+
+function mayorYMenor() {
+  var num1 = parseFloat(document.getElementById("num1").value);
+  var num2 = parseFloat(document.getElementById("num2").value);
+  var resultado = document.getElementById('resultadoMayoryMenor');
+
+  if (!isNaN(num1) && !isNaN(num2)) {
+    if (num1 > num2) {
+      resultado.innerText = num1 + " es mayor que " + num2;
+    } else if (num1 < num2) {
+      resultado.innerText = num1 + " es menor que " + num2;
+    } else {
+      resultado.innerText = "Los números son iguales";
+    }
+  } else {
+    resultado.innerText = "Por favor, ingrese números válidos en ambos campos.";
   }
+}
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
 
 
 

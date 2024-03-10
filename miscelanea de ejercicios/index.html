@@ -14,18 +14,18 @@
 
 </header>
 
+
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown" onmouseover="showDropdown(this)" onmouseleave="hideDropdown(this)">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Operadores
+              Operadores 
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
 
-
-
-
+                
                 <li>
                     <button class="dropdown-item" id="openModal">Área Triángulo</button>
                     <div id="miModal" class="modal">
@@ -202,11 +202,8 @@
                                 </div>
                             </div>       
                         </li>
-                    </ul>
-                </li>
-
-
-
+             
+            
             </ul>
         </li>
 
@@ -214,11 +211,84 @@
 
         
 
+        <li class="nav-item dropdown" onmouseover="showDropdown(this)" onmouseleave="hideDropdown(this)">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Condicionales
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
 
-               
+            
+            
+                <li>
+                    <button class="dropdown-item" id="openModalVerificacion1">Verificar Positivo y Negativo</button>
+                    <div id="modalVerificacion1" class="modal">
+                        <div class="modal-contenido">
+                            <span class="cerrar">&times;</span>
+
+                            <h2>Ingresa un número</h2>
+                            <label for="numero">Número:</label>
+                            <input type="number" id="numero" required>
+                            <br>
+                            <button class="btn btn-primary" onclick="verificarPositivoNegativo()">Verificar</button>
+                            <div id="resultadoVerificacion">
+                                <h2>Resultado: <span id="resultadoVerificacionTexto"></span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+
+
+
+                <li>
+                    <button class="dropdown-item" id="openModalVerificacion2">Numero Mayor Y Menor</button>
+                    <div id="modalVerificacion2" class="modal">
+                        <div class="modal-contenido">
+                            <span class="cerrar">&times;</span>
+
+                            <h2>Ingresa un número</h2>
+                            <label for="num1">Número:</label>
+                            <input type="number" id="num1" required>
+
+                            <h2>Ingrese un numero</h2>
+                            <label for="num2">Numero:</label>
+                            <input type="number" id="num2">
+
+
+
+                            <br>
+                            <button class="btn btn-primary" onclick="mayorYMenor()">Verificar</button>
+                            <div id="resultadoVerificacion2">
+                                <h2>Resultado: <span id="resultadoMayoryMenor"></span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </ul>
         </li>
+    </ul>
+</nav>
+
+
+
+
 
 
 
@@ -242,14 +312,30 @@
 </script>
 
 
+<script>
+    //funciones condicionales//
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('openModalVerificacion1').addEventListener('click', function() {
+        document.getElementById('modalVerificacion1').style.display = 'block';
+    });
+
+   
+    document.getElementById('openModalVerificacion2').addEventListener('click', function() {
+        document.getElementById('modalVerificacion2').style.display = 'block';
+    });
+    
 
 
 
+    //cerrar botones//
+    var cerrarButtons = document.getElementsByClassName('cerrar');
+    for (let i = 0; i < cerrarButtons.length; i++) {
+        cerrarButtons[i].addEventListener('click', function() {
+            this.parentElement.parentElement.style.display = 'none';
+        });
+    }
+});
 
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</script>
 </body>
 </html>

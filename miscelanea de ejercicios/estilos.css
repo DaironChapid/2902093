@@ -1,11 +1,8 @@
-
-
-
 /* Estilos generales para el navbar */
 .navbar {
     background-color: #f0f5f1; /* Un verde muy claro como fondo */
     border-bottom: 2px solid #004d40; /* Un verde más oscuro para el borde */
-    padding: 10px 20px;
+    padding: 3px 10px;
 }
 
 /* Estilo de los enlaces del navbar */
@@ -18,6 +15,7 @@
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
     color: #004d40; /* Un verde más oscuro */
+    
 }
 
 /* Estilo de los dropdown menus */
@@ -37,6 +35,7 @@
 .dropdown-item:focus {
     background-color: #004d40; /* Un verde oscuro para el fondo */
     color: #ffffff; /* Texto en blanco */
+    
 }
 
 /* Estilos generales para los botones */
@@ -78,15 +77,33 @@
 }
 
 .modal-contenido {
-    background-color: #e8f5e9; /* Un fondo verde claro */
-    border-radius: 5px; /* Bordes redondeados */
-    /* Más de tus estilos personalizados */
+    background-color: #ffffff; /* Fondo blanco para un look limpio y profesional */
+    border: 1px solid #dce4ec; /* Un borde sutil para definir el contorno */
+    border-radius: 5px; /* Bordes redondeados suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para añadir profundidad */
+    padding: 20px; /* Espacio interior para no saturar el contenido */
+    width: auto; /* Ancho automático basado en el contenido */
+    max-width: 500px; /* Un máximo ancho para asegurar que luzca bien en pantallas grandes */
+    margin: auto; /* Margen automático para centrar vertical y horizontalmente */
+    margin-top: 300px;
+    display: flex; /* Utiliza flexbox para organizar el contenido */
+    flex-direction: column; /* Orienta los hijos del modal verticalmente */
+    justify-content: start; /* Alinea el contenido desde el principio */
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    overflow: hidden; /* Esconde el contenido que se desborde del tamaño del modal */
 }
+
+
 
 /* Estilo para cerrar el modal */
 .cerrar {
     color: #004d40; /* Un verde oscuro */
     cursor: pointer;
+    margin-left: 470px;
+    margin-top: -25px;
+    padding: auto;
+    font-size: 25px;
+    
     /* Más estilos según sea necesario */
 }
 
@@ -99,4 +116,21 @@
 
 h1 {
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Una tipografía moderna y limpia */
+    color: #004d40; /* Un tono de verde oscuro elegante */
+    font-size: 2.5rem; /* Tamaño de letra grande para destacar */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e8f5e9; /* Un fondo claro para hacer resaltar el texto */
+    border-radius: 8px; /* Bordes redondeados suaves */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para añadir profundidad */
+    transition: transform 0.3s ease-in-out; /* Transición suave para efecto de interacción */
 }
+
+h1:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor para indicar interactividad */
+}
+
+
