@@ -180,8 +180,19 @@ function calcularPromedio() {
 //VERIFICAR POSITIVO Y NEGATIVO//
 
 
-    
-    function verificarPositivoNegativo() {
+  document.getElementById('openModalVerificacion1').addEventListener('click', function() {
+      document.getElementById('modalVerificacion1').style.display = 'block';
+  });
+
+  var cerrarButtons = document.getElementsByClassName('cerrar');
+  for (let i = 0; i < cerrarButtons.length; i++) {
+      cerrarButtons[i].addEventListener('click', function() {
+          this.parentElement.parentElement.style.display = 'none';
+      });
+  }
+
+
+  function verificarPositivoNegativo() {
         var num = parseFloat(document.getElementById('numero').value);
         var resultadoTexto = document.getElementById('resultadoVerificacionTexto');
     
@@ -202,12 +213,27 @@ function calcularPromedio() {
 
 //Algoritmo que diga cual es mayor o menor
 
-function mayorYMenor() {
-  var num1 = parseFloat(document.getElementById("num1").value);
-  var num2 = parseFloat(document.getElementById("num2").value);
-  var resultado = document.getElementById('resultadoMayoryMenor');
 
-  if (!isNaN(num1) && !isNaN(num2)) {
+  document.getElementById('openModalVerificacion2').addEventListener('click', function() {
+      document.getElementById('modalVerificacion2').style.display = 'block';
+  });
+
+  var cerrarButtons = document.getElementsByClassName('cerrar');
+  for (let i = 0; i < cerrarButtons.length; i++) {
+      cerrarButtons[i].addEventListener('click', function() {
+          this.parentElement.parentElement.style.display = 'none';
+      });
+  }
+function mayorYMenor() {
+  var num1 = parseInt(document.getElementById('num1').value);
+  var num2 = parseInt(document.getElementById('num2').value);
+  var resultado = document.getElementById('resultadoMayorYmenor');
+
+  if (isNaN(num1) || isNaN(num2)) {
+    resultado.innerText = "Por favor, ingrese números válidos en ambos campos.";
+    return;
+  } 
+  else {
     if (num1 > num2) {
       resultado.innerText = num1 + " es mayor que " + num2;
     } else if (num1 < num2) {
@@ -215,11 +241,65 @@ function mayorYMenor() {
     } else {
       resultado.innerText = "Los números son iguales";
     }
-  } else {
-    resultado.innerText = "Por favor, ingrese números válidos en ambos campos.";
   }
+  }
+  
+
+
+
+//MAYOR Y MENOR ENTRE 3 NUMEROS
+
+document.getElementById('openModalVerificacion3').addEventListener('click', function() {
+  document.getElementById('modalVerificacion3').style.display = 'block';
+});
+
+var cerrarButtons = document.getElementsByClassName('cerrar');
+for (let i = 0; i < cerrarButtons.length; i++) {
+  cerrarButtons[i].addEventListener('click', function() {
+      this.parentElement.parentElement.style.display = 'none';
+  });
 }
 
+function mayorYMenorTresNumeros() {
+  var num1 = parseInt(document.getElementById("num3_1").value);
+  var num2 = parseInt(document.getElementById("num3_2").value);
+  var num3 = parseInt(document.getElementById("num3_3").value);
+  var resultado1 = document.getElementById('resultadomayorymenor3numtexto');
+  if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+    resultado1.innerText = "Por favor, ingrese números válidos en los tres campos.";
+    return;
+  }
+  var mayor = Math.max(num1, num2, num3);
+  var menor = Math.min(num1, num2, num3);
+  resultado1.innerText = "El mayor número es: " + mayor + ". El menor número es: " + menor + ".";
+}
+
+
+//sumar o restar //
+document.getElementById('openModalVerificacion4').addEventListener('click', function() {
+  document.getElementById('modalVerificacion4').style.display = 'block';
+});
+
+var cerrarButtons = document.getElementsByClassName('cerrar');
+for (let i = 0; i < cerrarButtons.length; i++) {
+  cerrarButtons[i].addEventListener('click', function() {
+      this.parentElement.parentElement.style.display = 'none';
+  });
+}
+
+function sumarORestar() {
+  var numA = parseInt(document.getElementById('numA').value);
+  var numB = parseInt(document.getElementById('numB').value);
+  var resultadoElemento = document.getElementById('resultado');
+
+  var calculo;
+  if (numA < numB) {
+    calculo = numA + numB;
+  } else {
+    calculo = numA - numB;
+  }
+  resultadoElemento.innerText = "El resultado es: " + calculo;
+  }
 
 
   

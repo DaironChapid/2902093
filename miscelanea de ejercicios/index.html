@@ -260,12 +260,69 @@
 
                             <br>
                             <button class="btn btn-primary" onclick="mayorYMenor()">Verificar</button>
-                            <div id="resultadoVerificacion2">
-                                <h2>Resultado: <span id="resultadoMayoryMenor"></span></h2>
+                            <div id="resultadoMayorYmenor2">
+                                <h2>Resultado: <span id="resultadoMayorYmenor"></span></h2>
                             </div>
                         </div>
                     </div>
                 </li>
+
+
+
+
+
+
+
+                <li>
+    <button class="dropdown-item" id="openModalVerificacion3">Mayor y Menor de Tres Números</button>
+    <div id="modalVerificacion3" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <h2>Ingrese tres números</h2>
+            <label for="num3_1">Número 1:</label>
+            <input type="number" id="num3_1" required>
+            <label for="num3_2">Número 2:</label>
+            <input type="number" id="num3_2" required>
+            <label for="num3_3">Número 3:</label>
+            <input type="number" id="num3_3" required>
+            <br>
+            <button class="btn btn-primary" onclick="mayorYMenorTresNumeros()">Verificar</button>
+            <div id="resultadoMayorYmenor3">
+                <h2>Resultado: <span id="resultadomayorymenor3numtexto"></span></h2>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+
+<li>
+    <button class="dropdown-item" id="openModalVerificacion4">Sumar o Restar</button>
+    <div id="modalVerificacion4" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            
+            <h2>Sumar o Restar Números</h2>
+            <label for="numA">Número A:</label>
+            <input type="number" id="numA" required>
+            <label for="numB">Número B:</label>
+            <input type="number" id="numB" required>
+            <br>
+            <button class="btn btn-primary" onclick="sumarORestar()">Calcular</button>
+            <div id="resultadoSumaResta">
+                <h2>Resultado: <span id="resultado"></span></h2>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+
+
+
+
+
+
 
 
 
@@ -312,30 +369,7 @@
 </script>
 
 
-<script>
-    //funciones condicionales//
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('openModalVerificacion1').addEventListener('click', function() {
-        document.getElementById('modalVerificacion1').style.display = 'block';
-    });
-
-   
-    document.getElementById('openModalVerificacion2').addEventListener('click', function() {
-        document.getElementById('modalVerificacion2').style.display = 'block';
-    });
-    
 
 
-
-    //cerrar botones//
-    var cerrarButtons = document.getElementsByClassName('cerrar');
-    for (let i = 0; i < cerrarButtons.length; i++) {
-        cerrarButtons[i].addEventListener('click', function() {
-            this.parentElement.parentElement.style.display = 'none';
-        });
-    }
-});
-
-</script>
 </body>
 </html>
