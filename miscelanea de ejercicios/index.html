@@ -325,18 +325,80 @@
             <span class="cerrar">&times;</span>
             
             <h2>Division de numeros</h2>
-            <label for="numA">Número A:</label>
-            <input type="number" id="numA" required>
-            <label for="numB">Número B:</label>
-            <input type="number" id="numB" required>
+            <label for="numeroA">Número A:</label>
+            <input type="number" id="numeroA" required>
+            <label for="numeroB">Número B:</label>
+            <input type="number" id="numeroB" required>
             <br>
             <button class="btn btn-primary" onclick="divisionDosNumeros()">Calcular</button>
             <div id="resultadodivision3">
-                <h2>Resultado: <span id="resultadoDivision"></span></h2>
+                <h2>Resultado: <span id="resultadoDivisionTexto"></span></h2>
             </div>
         </div>
     </div>
 </li>
+
+
+
+<li>
+    <button class="dropdown-item" id="openModalVerificacion6">Sumar o restar</button>
+    <div id="modalVerificacion6" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            
+            <h2>Sumar o restar</h2>
+            <label for="numeroparasumar1">Numero :</label>
+            <input type="number" id="numeroparasumar1" required>
+            <label for="numeroparasumar2">Numero :</label>
+            <input type="number" id="numeroparasumar2" required>
+            <br>
+            <button class="btn btn-primary" onclick="SumarOMultiplicar()">Calcular</button>
+            <div id="resultadosumaromultiplicar3">
+                <h2>Resultado: <span id="resultadosumaromultiplicar"></span></h2>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+
+
+<li>
+    <button class="dropdown-item" id="openModalVerificacion7">año bisiesto</button>
+    <div id="modalVerificacion7" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            
+            <h2>calcular año bisiesto</h2>
+            <label for="añobisiesto1">Año</label>
+            <input type="number" id="añobisiesto1" required>
+            <br>
+            <button class="btn btn-primary" onclick="CalcularAñobisiesto()">Calcular</button>
+            <div id="resultadocalcularañobisiesto2">
+                <h2>Resultado: <span id="resultadocalcularañobisiesto"></span></h2>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

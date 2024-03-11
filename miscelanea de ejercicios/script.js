@@ -317,28 +317,100 @@ for (let i = 0; i < cerrarButtons.length; i++) {
       this.parentElement.parentElement.style.display = 'none';
   });
 }
+
 function divisionDosNumeros() {
-  var numA = parseInt(document.getElementById('numA').value);
-  var numB = parseInt(document.getElementById('numB').value);
-  var resultadoDivisionElemento = document.getElementById('resultadoDivision');
+  var numeroA = parseInt(document.getElementById('numeroA').value);
+  var numeroB = parseInt(document.getElementById('numeroB').value);
+  var resultadoDivisionElemento = document.getElementById('resultadoDivisionTexto');
 
   // Verifica si los números son válidos
-  if (isNaN(numA) || isNaN(numB)) {
+  if (isNaN(numeroA) || isNaN(numeroB)) {
     // Muestra un mensaje de error si uno o ambos números no son válidos
     resultadoDivisionElemento.innerText = "Por favor, ingrese números válidos.";
     return; // Sale de la función
   }
 
   // Verifica si el divisor es cero
-  if (numB !== 0) {
+  if (numeroB !== 0) {
     // Realiza la división si el divisor es diferente de cero
-    var resultado = numA / numB;
-    resultadoDivisionElemento.innerText = "El cociente es: " + resultado;
+    var resultadoDelaDivision = numeroA / numeroB;
+    resultadoDivisionElemento.innerText = "El cociente es: " + resultadoDelaDivision;
   } else {
     // Muestra un mensaje de error si el divisor es cero
     resultadoDivisionElemento.innerText = "La división no es posible. El denominador es cero.";
   }
 }
+
+
+//sumar o multiplicar//
+document.getElementById('openModalVerificacion6').addEventListener('click', function() {
+  document.getElementById('modalVerificacion6').style.display = 'block';
+});
+
+var cerrarButtons = document.getElementsByClassName('cerrar');
+for (let i = 0; i < cerrarButtons.length; i++) {
+  cerrarButtons[i].addEventListener('click', function() {
+      this.parentElement.parentElement.style.display = 'none';
+  });
+}
+function SumarOMultiplicar(){
+  var numerosumar1 = parseInt(document.getElementById('numeroparasumar1').value);
+  var numerosumar2 = parseInt(document.getElementById('numeroparasumar2').value);
+  var resultadoSumarOmultiplicar = document.getElementById('resultadosumaromultiplicar');
+
+  if (isNaN(numerosumar1) || isNaN(numerosumar2)) {
+    resultadoSumarOmultiplicar.innerText = "ingrese por favor numeros validos";
+    return;
+  }
+else if (numerosumar1 < 0 || numerosumar2 < 0) {
+resultadoSumarOmultiplicar.innerText = " la suma de " + numerosumar1 + " y " + numerosumar2 + " es: " + (numerosumar1 + numerosumar2);
+  }
+  else if (numerosumar1 > 0 && numerosumar2 > 0){
+    resultadoSumarOmultiplicar.innerText = "la multiplicacion de: " + numerosumar1 + " y  " + numerosumar2 + " es: " + (numerosumar1 * numerosumar2);
+  }
+
+// año bisiesto //
+
+document.getElementById('openModalVerificacion7').addEventListener('click', function() {
+  document.getElementById('modalVerificacion7').style.display = 'block';
+});
+
+var cerrarButtons = document.getElementsByClassName('cerrar');
+for (let i = 0; i < cerrarButtons.length; i++) {
+  cerrarButtons[i].addEventListener('click', function() {
+      this.parentElement.parentElement.style.display = 'none';
+  });
+}
+  function CalcularAñobisiesto(){
+    var año1bisiesto = parseInt(document.getElementById('añobisiesto1').value)
+    var resultadodelañobisiesto = document.getElementById('resultadocalcularañobisiesto')
+
+    if (isNaN (año1bisiesto)) {
+      resultadoesbisiesto.innerText = "Por favor, ingrese un año válido.";
+      return;
+    }
+  
+    if ((año1bisiesto % 4 == 0 && año1bisiesto % 100 != 0) || (año1bisiesto % 400 == 0)) {
+      resultadodelañobisiesto.innerText = "El año " + año1bisiesto + " es bisiesto.";
+    } else {
+      resultadodelañobisiesto.innerText = "El año " + año1bisiesto + " no es bisiesto.";
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
 
 
 
