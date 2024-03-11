@@ -224,24 +224,20 @@ function calcularPromedio() {
           this.parentElement.parentElement.style.display = 'none';
       });
   }
-function mayorYMenor() {
-  var num1 = parseInt(document.getElementById('num1').value);
-  var num2 = parseInt(document.getElementById('num2').value);
-  var resultado = document.getElementById('resultadoMayorYmenor');
-
-  if (isNaN(num1) || isNaN(num2)) {
-    resultado.innerText = "Por favor, ingrese números válidos en ambos campos.";
-    return;
-  } 
-  else {
-    if (num1 > num2) {
-      resultado.innerText = num1 + " es mayor que " + num2;
-    } else if (num1 < num2) {
-      resultado.innerText = num1 + " es menor que " + num2;
+  function mayorYMenor() {
+    var numero1 = parseFloat(document.getElementById("numero1").value);
+    var numero2 = parseFloat(document.getElementById("numero2").value);
+    var resultadoMayorMenor = document.getElementById("resultadoMayorYmenor");
+  
+    if (isNaN(numero1) || isNaN(numero2)) {
+      resultadoMayorMenor.textContent = "Por favor ingrese un número válido.";
+    } else if (numero1 > numero2) {
+      resultadoMayorMenor.textContent = numero1 + " es mayor que " + numero2;
+    } else if (numero1 < numero2) {
+      resultadoMayorMenor.textContent = numero1 + " es menor que " + numero2;
     } else {
-      resultado.innerText = "Los números son iguales";
+      resultadoMayorMenor.textContent = "Los números son iguales";
     }
-  }
   }
   
 
@@ -290,16 +286,70 @@ for (let i = 0; i < cerrarButtons.length; i++) {
 function sumarORestar() {
   var numA = parseInt(document.getElementById('numA').value);
   var numB = parseInt(document.getElementById('numB').value);
-  var resultadoElemento = document.getElementById('resultado');
+  var resultadoElemento = document.getElementById('resultadoSumaroRestar');
 
-  var calculo;
-  if (numA < numB) {
-    calculo = numA + numB;
+  if (isNaN(numA) || isNaN(numB)) {
+    resultadoElemento.innerText = "por favor, ingrese numeros validos";
+    return;
+  }
+  else if (numA < numB) {
+   resultadoElemento.innerText = "La resta de " + numA + " y " + numB + " es: " + (numA - numB);
+}
+else if (numA > numB){
+  resultadoElemento.innerText = "La suma de " + numA + " y " + numB + " es: " + (numA + numB);
+}
+
+ }
+
+
+
+
+
+ 
+ //division de dos nuemeros//
+ document.getElementById('openModalVerificacion5').addEventListener('click', function() {
+  document.getElementById('modalVerificacion5').style.display = 'block';
+});
+
+var cerrarButtons = document.getElementsByClassName('cerrar');
+for (let i = 0; i < cerrarButtons.length; i++) {
+  cerrarButtons[i].addEventListener('click', function() {
+      this.parentElement.parentElement.style.display = 'none';
+  });
+}
+function divisionDosNumeros() {
+  var numA = parseInt(document.getElementById('numA').value);
+  var numB = parseInt(document.getElementById('numB').value);
+  var resultadoDivisionElemento = document.getElementById('resultadoDivision');
+
+  // Verifica si los números son válidos
+  if (isNaN(numA) || isNaN(numB)) {
+    // Muestra un mensaje de error si uno o ambos números no son válidos
+    resultadoDivisionElemento.innerText = "Por favor, ingrese números válidos.";
+    return; // Sale de la función
+  }
+
+  // Verifica si el divisor es cero
+  if (numB !== 0) {
+    // Realiza la división si el divisor es diferente de cero
+    var resultado = numA / numB;
+    resultadoDivisionElemento.innerText = "El cociente es: " + resultado;
   } else {
-    calculo = numA - numB;
+    // Muestra un mensaje de error si el divisor es cero
+    resultadoDivisionElemento.innerText = "La división no es posible. El denominador es cero.";
   }
-  resultadoElemento.innerText = "El resultado es: " + calculo;
-  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
   
